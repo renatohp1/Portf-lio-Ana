@@ -1,0 +1,477 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+   --primaria: #4f46e5;
+   --secundaria: #7c3aed;
+   --escuro: #0f172a;
+   --maisEscuro: #0a0f1c;
+   --claro: #e2e8f0;
+   --vidro: rgba(255, 255, 255, 0.1); 
+}
+
+body{
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+.navegacao{
+    position: fixed;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+.menu-link{
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.menu-link::after{
+    content: '';
+    height:2px ;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after{
+    width: 100%;
+}
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.foto-perfil{
+    width: 490px;
+    height:490px;
+    box-shadow: 0 0 20px rgba(79, 70, 299, 0.3);
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    margin-top: 85px;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+h1{
+    font-size: 3.5rem;
+    color: var(--claro);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.cabecalho-sub-titulo{
+    font-size: 3rem;
+    color: var(--claro);
+}
+
+.sobre{
+    padding: 6rem 2rem;
+}
+
+.sobre-titulo{
+    font-size: 3rem;
+    color: var(--claro);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sobre-caixa{
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-paragrafo{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.formacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 1rem;
+    padding: 6rem 2rem;
+}
+
+.formacao-titulo{
+    justify-content: center;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.formacao-card:hover{
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.formacao-caixa{
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.formacao-card{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.formacao-card.active2{
+    display: flex;
+}
+
+#prev2,#next2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--claro);
+    font-size: x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+#prev2{
+    left: 30px;
+}
+
+#next2{
+    right: 30px;
+}
+
+
+.experiencia{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 1rem;
+    padding: 6rem 2rem; 
+}
+
+.experiencia-titulo{
+    justify-content: center;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 50px;
+    margin: 0 auto;
+}
+
+.card:hover{
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.experiencia-caixa{
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.card{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+
+
+.card.active{
+    display: flex;
+}
+
+.titulo-card{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cargo-card{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 30px
+}
+
+.texto-card{
+    text-align: center;
+    font-size: 1rem;
+}
+
+#prev, #next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--claro);
+    font-size: x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+#prev{
+    left: 30px;
+}
+
+#next{
+    right: 30px;
+}
+
+
+.contato{
+    padding: 6rem 2rem;
+}
+
+.contato-titulo{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.formulario-contato{
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+}
+
+
+
+
+.campo-form{
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+}
+
+.campo-form:focus{
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);    
+}
+
+.grupo-form{
+    margin-bottom: 1.5rem;
+}
+
+.botao-form{
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5 ease;
+}
+
+.botao-form:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.particulas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+                var(--maisEscuro); 
+}
+
+@keyframes flutuar {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .foto-perfil {
+        width: 250px;
+        height: 250px;
+        margin-top: 60px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .cabecalho-sub-titulo,
+    .sobre-titulo,
+    .formacao-titulo,
+    .experiencia-titulo,
+    .contato-titulo {
+        font-size: 1.5rem;
+    }
+
+    .formacao, .experiencia {
+        flex-direction: column;
+        padding: 3rem 1rem;
+    }
+
+    .formacao-caixa,
+    .experiencia-caixa {
+        width: 100%;
+        height: 400px; /* Mantém o tamanho do slide */
+        max-width: 100%;
+        position: relative;
+    }
+
+    .formacao-card,
+    .card {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: none;
+    }
+
+    .formacao-card.active2,
+    .card.active {
+        display: flex;
+    }
+
+    #prev, #next,
+    #prev2, #next2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--claro);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    #prev, #prev2 {
+        left: 10px;
+    }
+
+    #next, #next2 {
+        right: 10px;
+    }
+
+    .formulario-contato {
+        padding: 1rem;
+    }
+
+    .campo-form {
+        padding: 0.75rem;
+    }
+
+    .botao-form {
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+
+
