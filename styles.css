@@ -470,6 +470,7 @@ h1{
         color: var(--claro);
         border-radius: 50%;
         cursor: pointer;
+        text-align: center;
     }
 
     #prev, #prev2 {
