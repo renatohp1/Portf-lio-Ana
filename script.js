@@ -66,3 +66,6 @@ function enviar(event) {
     window.open(url, '_blank')
 }
 
+function abrirCertificado(url){
+    window.open(url, '_blank');
+}
